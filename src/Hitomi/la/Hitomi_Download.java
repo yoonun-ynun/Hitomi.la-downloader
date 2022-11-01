@@ -99,6 +99,7 @@ public class Hitomi_Download {
                     assert con != null;
                     if (!(con.getResponseCode() == 503)) {
                         e.printStackTrace();
+                        break;
                     }
                 }catch (IOException i){
                     i.printStackTrace();
