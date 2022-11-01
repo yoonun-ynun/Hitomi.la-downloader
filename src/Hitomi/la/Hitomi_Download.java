@@ -29,15 +29,12 @@ public class Hitomi_Download {
         for(int i = 1;i<=gallery_hash.size();i++){
             int num = i;
             String hash = gallery_hash.get(i);
-            Runnable run = new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        download_image(hash, new File(Address + "/", num + ".webp"));
-                        count[0]++;
-                    }catch (TooshorthashException e){
-                        e.printStackTrace();
-                    }
+            Runnable run = () -> {
+                try {
+                    download_image(hash, new File(Address + "/", num + ".webp"));
+                    count[0]++;
+                }catch (TooshorthashException e){
+                    e.printStackTrace();
                 }
             };
             Threads.submit(run);
