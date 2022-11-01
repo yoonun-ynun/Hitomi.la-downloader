@@ -14,9 +14,9 @@ public class get_gallery_info {
     final String base_Address = "https://ltn.hitomi.la/galleries/";
     String Address;
     JSONObject gallery_info;
-    public get_gallery_info(String number) throws HitomiNotFoundException{
+    public get_gallery_info(String gallery_number) throws HitomiNotFoundException{
         try {
-            this.Address = this.base_Address + number + ".js";
+            this.Address = this.base_Address + gallery_number + ".js";
             URL url = new URL(this.Address);
             HttpURLConnection con = (HttpURLConnection)url.openConnection();
 
