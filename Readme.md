@@ -18,6 +18,9 @@ path 변수에 입력된 경로에 품번을 이름으로 폴더를 하나 더 �
 HitomiNotFoundException: 번호에 대한 작품이 없습니다.<br>
 TimeOutException: 저장하는데 시간이 너무 오래 걸립니다. 5분이상의 시간동안 저장이 안될시 오류를 리턴합니다.
 
+출력:<br>
+10밀리초당 한번 씩 다운로드 완료 된 페이지를 출력합니다.
+
 
 <hr>
 void Hitomi_Download.download_image(String hash, File file):<br>
@@ -35,5 +38,9 @@ HashMap &lt;Integer, String&gt; get_gallery_info.get_hash():<br>
 
 해야하는 예외처리:<br>
 HitomiNotFoundException: 번호에 대한 작품이 없습니다.
+
+
+
+<br><br><br>
 
 
