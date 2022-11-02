@@ -19,11 +19,14 @@ public class Hitomi_Download {
     public Hitomi_Download(String gallery_number){
         this.gallery_number = gallery_number;
     }
-    public void download_gallery(Path path) throws HitomiNotFoundException, TimeOutException{
+
+    public void download_gallery(Path path) throws HitomiNotFoundException, TimeOutException{download_gallery(path, 10);}
+
+    public void download_gallery(Path path, int Thread) throws HitomiNotFoundException, TimeOutException{
         HashMap<Integer, String> gallery_hash = new get_gallery_info(this.gallery_number).get_hash();
         String Address = path.toString() + "/" + this.gallery_number;
         new File(Address).mkdirs();
-        ExecutorService Threads = Executors.newFixedThreadPool(10);
+        ExecutorService Threads = Executors.newFixedThreadPool(Thread);
         final int[] count = {0};
 
         for(int i = 1;i<=gallery_hash.size();i++){
